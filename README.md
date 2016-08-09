@@ -38,13 +38,18 @@ require(['cytoscape', 'cytoscape-auto-pan-on-out-of-canvas-bounds'], function( c
 
 Plain HTML/JS has the extension registered for you automatically, because no `require()` is needed.
 
-## API
+## Default Options
+
 ```js
 var options = {
     enabled: true, // Whether the extension is enabled on register
     selector: 'node' // Which elements will be affected by this extension
 };
+```
 
+## API
+
+```js
 var instance = cy.autoPanOnOutOfCanvasBounds( options );
 ```
 
