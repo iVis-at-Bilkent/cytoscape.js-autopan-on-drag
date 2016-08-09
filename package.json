@@ -1,6 +1,6 @@
 {
   "name": "cytoscape-auto-pan-on-out-of-canvas-bounds",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An extension to automatically pan when nodes are out of canvas bounds.",
   "main": "cytoscape-auto-pan-on-out-of-canvas-bounds.js",
   "spm": {
