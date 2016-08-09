@@ -7,15 +7,39 @@
 
     var cy;
     var currentNode;
+    var tapstartFcn, tapdragFcn, tapendFcn;
+    
+    // Default options
+    var defaults = {
+      enabled: true, // Whether the extension is enabled on register
+      selector: 'node' // Which elements will be affected by this extension
+    };
+    
+    var options;
+    
+    // Merge default options with the ones coming from parameter
+    function extend(defaults, options) {
+      var obj = {};
+
+      for (var i in defaults) {
+        obj[i] = defaults[i];
+      }
+
+      for (var i in options) {
+        obj[i] = options[i];
+      }
+
+      return obj;
+    };
     
     function bindCyEvents() {
       
-      cy.on('tapstart', 'node', function() {
+      cy.on('tapstart', options.selector, tapstartFcn = function() {
         var node = this;
         currentNode = node;
       });
       
-      cy.on('tapdrag', function() {
+      cy.on('tapdrag', tapdragFcn = function() {
         if(currentNode === undefined) {
           return;
         }
@@ -69,9 +93,15 @@
         }
       });
       
-      cy.on('tapend', function() {
+      cy.on('tapend', tapendFcn = function() {
         currentNode = undefined;
       });
+    }
+    
+    function unbindCyEvents() {
+      cy.off('tapstart', options.selector, tapstartFcn);
+      cy.off('tapdrag', tapdragFcn);
+      cy.off('tapend', tapendFcn);
     }
     
     function convertToRenderedPosition(modelPosition) {
@@ -86,13 +116,27 @@
         y: y
       };
     }
-
-    cytoscape( 'core', 'autoPanOnOutOfCanvasBounds', function(){
+    
+    cytoscape( 'core', 'autoPanOnOutOfCanvasBounds', function(opts){
       cy = this;
 
-      bindCyEvents();
-
-      return this; // chainability
+      if(opts !== 'get') {
+        // merge the options with default ones
+        options = extend(defaults, opts);
+        
+        if(options.enabled) {
+          bindCyEvents();
+        }
+      }
+      
+      return {
+        enable: function() {
+          bindCyEvents();
+        },
+        disable: function() {
+          unbindCyEvents();
+        }
+      };
     } );
 
   };

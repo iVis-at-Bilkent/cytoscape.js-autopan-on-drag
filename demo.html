@@ -23,11 +23,12 @@
 
 			#cy {
 				position: absolute;
-				left: 0;
-				top: 0;
-				bottom: 0;
-				right: 0;
+				left: 10;
+				top: 10;
+				bottom: 10;
+				right: 10;
 				z-index: 999;
+                                border: 1px solid gray;
 			}
 
 			h1 {
@@ -88,7 +89,9 @@
 				});
 
 				// demo your core ext
-				cy.autoPanOnOutOfCanvasBounds( /* args... */ );
+				cy.autoPanOnOutOfCanvasBounds( {
+                                    /* Options here */
+                                } );
 
 			});
 		</script>
