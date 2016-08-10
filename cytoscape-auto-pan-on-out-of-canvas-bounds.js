@@ -44,26 +44,22 @@
           return;
         }
         
-        var newPosition = {
-          x: currentNode.position('x'),
-          y: currentNode.position('y')
-        };
+        var newRenderedPosition = currentNode.renderedPosition();
+        var renderedWidth = currentNode.renderedWidth();
+        var renderedHeight = currentNode.renderedHeight();
         
         var maxRenderedX = $(cy.container()).width();
         var maxRenderedY = $(cy.container()).height();
 
-        var topLeftPosition = {
-          x: newPosition.x - currentNode.width() / 2,
-          y: newPosition.y - currentNode.height() / 2
+        var topLeftRenderedPosition = {
+          x: newRenderedPosition.x - renderedWidth / 2,
+          y: newRenderedPosition.y - renderedHeight / 2
         };
 
-        var bottomRightPosition = {
-          x: newPosition.x + currentNode.width() / 2,
-          y: newPosition.y + currentNode.height() / 2
+        var bottomRightRenderedPosition = {
+          x: newRenderedPosition.x + renderedWidth / 2,
+          y: newRenderedPosition.y + renderedHeight / 2
         };
-
-        var topLeftRenderedPosition = convertToRenderedPosition(topLeftPosition);
-        var bottomRightRenderedPosition = convertToRenderedPosition(bottomRightPosition);
        
         var exceedX;
         var exceedY;
@@ -102,19 +98,6 @@
       cy.off('tapstart', options.selector, tapstartFcn);
       cy.off('tapdrag', tapdragFcn);
       cy.off('tapend', tapendFcn);
-    }
-    
-    function convertToRenderedPosition(modelPosition) {
-      var pan = cy.pan();
-      var zoom = cy.zoom();
-
-      var x = modelPosition.x * zoom + pan.x;
-      var y = modelPosition.y * zoom + pan.y;
-
-      return {
-        x: x,
-        y: y
-      };
     }
     
     cytoscape( 'core', 'autoPanOnOutOfCanvasBounds', function(opts){
