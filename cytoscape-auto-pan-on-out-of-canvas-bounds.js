@@ -12,7 +12,8 @@
     // Default options
     var defaults = {
       enabled: true, // Whether the extension is enabled on register
-      selector: 'node' // Which elements will be affected by this extension
+      selector: 'node', // Which elements will be affected by this extension
+      speed: 1 // Speed of panning when elements exceed canvas bounds
     };
     
     var options;
@@ -81,11 +82,11 @@
         }
         
         if(exceedX) {
-          cy.panBy({x: exceedX});
+          cy.panBy({x: exceedX * options.speed});
         }
         
         if(exceedY) {
-          cy.panBy({y: exceedY});
+          cy.panBy({y: exceedY * options.speed});
         }
       });
       

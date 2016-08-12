@@ -43,7 +43,8 @@ Plain HTML/JS has the extension registered for you automatically, because no `re
 ```js
 var options = {
     enabled: true, // Whether the extension is enabled on register
-    selector: 'node' // Which elements will be affected by this extension
+    selector: 'node', // Which elements will be affected by this extension
+    speed: 1 // Speed of panning when elements exceed canvas bounds
 };
 ```
 
