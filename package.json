@@ -1,6 +1,6 @@
 {
   "name": "cytoscape-autopan-on-drag",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "An extension to automatically pan when nodes are out of canvas bounds.",
   "main": "cytoscape-autopan-on-drag.js",
   "spm": {
