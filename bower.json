@@ -1,13 +1,13 @@
 {
-  "name": "cytoscape-auto-pan-on-out-of-canvas-bounds",
+  "name": "cytoscape-autopan-on-drag",
   "description": "An extension to automatically pan when nodes are out of canvas bounds.",
-  "main": "cytoscape-auto-pan-on-out-of-canvas-bounds.js",
+  "main": "cytoscape-autopan-on-drag.js",
   "dependencies": {
     "cytoscape": "^2.7.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iVis-at-Bilkent/cytoscape.js-auto-pan-on-out-of-canvas-bounds.git"
+    "url": "https://github.com/iVis-at-Bilkent/cytoscape.js-autopan-on-drag.git"
   },
   "ignore": [
     "**/.*",

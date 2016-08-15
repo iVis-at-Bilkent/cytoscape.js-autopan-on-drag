@@ -1,4 +1,4 @@
-cytoscape-auto-pan-on-out-of-canvas-bounds
+cytoscape-autopan-on-drag
 ================================================================================
 
 
@@ -15,8 +15,8 @@ An extension to automatically pan when nodes are out of canvas bounds.
 ## Usage instructions
 
 Download the library:
- * via npm: `npm install cytoscape-auto-pan-on-out-of-canvas-bounds`,
- * via bower: `bower install cytoscape-auto-pan-on-out-of-canvas-bounds`, or
+ * via npm: `npm install cytoscape-autopan-on-drag`,
+ * via bower: `bower install cytoscape-autopan-on-drag`, or
  * via direct download in the repository (probably from a tag).
 
 `require()` the library as appropriate for your project:
@@ -24,15 +24,15 @@ Download the library:
 CommonJS:
 ```js
 var cytoscape = require('cytoscape');
-var auto-pan-on-out-of-canvas-bounds = require('cytoscape-auto-pan-on-out-of-canvas-bounds');
+var autopanOnDrag = require('cytoscape-autopan-on-drag');
 
-auto-pan-on-out-of-canvas-bounds( cytoscape ); // register extension
+autopanOnDrag( cytoscape ); // register extension
 ```
 
 AMD:
 ```js
-require(['cytoscape', 'cytoscape-auto-pan-on-out-of-canvas-bounds'], function( cytoscape, auto-pan-on-out-of-canvas-bounds ){
-  auto-pan-on-out-of-canvas-bounds( cytoscape ); // register extension
+require(['cytoscape', 'cytoscape-autopan-on-drag'], function( cytoscape, autopanOnDrag ){
+  autopanOnDrag( cytoscape ); // register extension
 });
 ```
 
@@ -51,7 +51,7 @@ var options = {
 ## API
 
 ```js
-var instance = cy.autoPanOnOutOfCanvasBounds( options );
+var instance = cy.autopanOnDrag( options );
 ```
 
 An instance has a number of functions available:
@@ -65,7 +65,7 @@ instance.disable(); // disable the instance
 You can also get an existing instance:
 
 ```js
-cy.autoPanOnOutOfCanvasBounds('get');
+cy.autopanOnDrag('get');
 ```
 
 
@@ -75,7 +75,7 @@ This project is set up to automatically be published to npm and bower.  To publi
 
 1. Set the version number environment variable: `export VERSION=1.2.3`
 1. Publish: `gulp publish`
-1. If publishing to bower for the first time, you'll need to run `bower register cytoscape-auto-pan-on-out-of-canvas-bounds https://github.com/iVis-at-Bilkent/cytoscape.js-auto-pan-on-out-of-canvas-bounds.git`
+1. If publishing to bower for the first time, you'll need to run `bower register cytoscape-autopan-on-drag https://github.com/iVis-at-Bilkent/cytoscape.js-autopan-on-drag.git`
 
 ## Team
 

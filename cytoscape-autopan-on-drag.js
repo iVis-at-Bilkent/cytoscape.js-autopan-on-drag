@@ -101,7 +101,7 @@
       cy.off('tapend', tapendFcn);
     }
     
-    cytoscape( 'core', 'autoPanOnOutOfCanvasBounds', function(opts){
+    cytoscape( 'core', 'autopanOnDrag', function(opts){
       cy = this;
 
       if(opts !== 'get') {
