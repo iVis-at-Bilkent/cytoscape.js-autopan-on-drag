@@ -4,7 +4,7 @@ cytoscape-autopan-on-drag
 
 ## Description
 
-An extension to automatically pan when nodes are out of canvas bounds.
+A Cytsocape.js extension to automatically pan when nodes are out of canvas bounds distributed under [The MIT License](https://opensource.org/licenses/MIT).
 
 
 ## Dependencies
