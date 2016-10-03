@@ -37,7 +37,35 @@
       
       cy.on('tapstart', options.selector, tapstartFcn = function() {
         var node = this;
-        currentNode = node;
+        
+        var renderedPosition = node.renderedPosition();
+        var renderedWidth = node.renderedWidth();
+        var renderedHeight = node.renderedHeight();
+        
+        var maxRenderedX = $(cy.container()).width();
+        var maxRenderedY = $(cy.container()).height();
+        
+        var topLeftRenderedPosition = {
+          x: renderedPosition.x - renderedWidth / 2,
+          y: renderedPosition.y - renderedHeight / 2
+        };
+
+        var bottomRightRenderedPosition = {
+          x: renderedPosition.x + renderedWidth / 2,
+          y: renderedPosition.y + renderedHeight / 2
+        };
+        
+        var exceed = false;
+        
+        if( ( bottomRightRenderedPosition.x >= maxRenderedX ) || ( topLeftRenderedPosition.x <= 0 )
+                || ( bottomRightRenderedPosition.y >= maxRenderedY ) || ( topLeftRenderedPosition.y <= 0 ) ){
+          exceed = true;
+        }
+        
+        if( !exceed ) {
+          currentNode = node;
+        }
+        
       });
       
       cy.on('tapdrag', tapdragFcn = function() {
