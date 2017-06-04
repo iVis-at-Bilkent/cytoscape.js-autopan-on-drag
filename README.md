@@ -9,7 +9,7 @@ A Cytsocape.js extension to automatically pan when nodes are out of canvas bound
 
 ## Dependencies
 
- * Cytoscape.js ^2.7.0
+ * Cytoscape.js ^2.7.0 || ^3.0.0"
 
 
 ## Usage instructions
