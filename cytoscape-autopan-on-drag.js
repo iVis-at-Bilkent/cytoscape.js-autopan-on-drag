@@ -35,7 +35,7 @@
             eleOrCy.scratch("_autopanOnDrag", {});
         }
 
-        var scratchPad = eleOrCy.scratch("_undoRedo");
+        var scratchPad = eleOrCy.scratch("_autopanOnDrag");
 
         return ( name === undefined ) ? scratchPad : scratchPad[name];
     }
