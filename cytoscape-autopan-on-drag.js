@@ -72,8 +72,8 @@
         var renderedWidth = node.renderedWidth();
         var renderedHeight = node.renderedHeight();
         
-        var maxRenderedX = $(cy.container()).width();
-        var maxRenderedY = $(cy.container()).height();
+        var maxRenderedX = getWidth(cy);
+        var maxRenderedY = getHeight(cy);
         
         var topLeftRenderedPosition = {
           x: renderedPosition.x - renderedWidth / 2,
@@ -112,8 +112,8 @@
         var renderedWidth = currentNode.renderedWidth();
         var renderedHeight = currentNode.renderedHeight();
         
-        var maxRenderedX = $(cy.container()).width();
-        var maxRenderedY = $(cy.container()).height();
+        var maxRenderedX = getWidth(cy);
+        var maxRenderedY = getHeight(cy);
 
         var topLeftRenderedPosition = {
           x: newRenderedPosition.x - renderedWidth / 2,
@@ -184,7 +184,15 @@
       // mark that the extension is disabled now
       setScratch(cy, 'enabled', undefined);
     }
-    
+
+    function getWidth (cy) {
+      return cy.container().clientWidth;
+    }
+
+    function getHeight (cy) {
+      return cy.container().clientHeight;
+    }
+
     cytoscape( 'core', 'autopanOnDrag', function(opts){
 
       var cy = this;
