@@ -72,8 +72,8 @@
         var renderedWidth = node.renderedWidth();
         var renderedHeight = node.renderedHeight();
         
-        var maxRenderedX = $(cy.container()).width();
-        var maxRenderedY = $(cy.container()).height();
+        var maxRenderedX = cy.width();
+        var maxRenderedY = cy.height();
         
         var topLeftRenderedPosition = {
           x: renderedPosition.x - renderedWidth / 2,
@@ -112,8 +112,8 @@
         var renderedWidth = currentNode.renderedWidth();
         var renderedHeight = currentNode.renderedHeight();
         
-        var maxRenderedX = $(cy.container()).width();
-        var maxRenderedY = $(cy.container()).height();
+        var maxRenderedX = cy.width();
+        var maxRenderedY = cy.height();
 
         var topLeftRenderedPosition = {
           x: newRenderedPosition.x - renderedWidth / 2,
