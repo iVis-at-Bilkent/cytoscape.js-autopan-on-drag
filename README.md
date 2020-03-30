@@ -15,7 +15,7 @@ U. Dogrusoz , A. Karacelik, I. Safarli, H. Balci, L. Dervishi, and M.C. Siper, "
 
 ## Demo
 
-[Click for the demo](https://raw.githack.com/iVis-at-Bilkent/cytoscape.js-autopan-on-drag/unstable/demo.html)
+[Click for the demo](https://ivis-at-bilkent.github.io/cytoscape.js-autopan-on-drag/demo.html)
 
 ## Usage instructions
 
